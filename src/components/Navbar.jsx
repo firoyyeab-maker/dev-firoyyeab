@@ -65,10 +65,9 @@ function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="text-2xl font-bold tracking-tight"
-          onClick={() => setActiveLink('Home')}
+          className="text-2xl font-bold tracking-tight text-gray-900 transition-colors dark:text-white"
         >
-          Dev.<span className="text-blue-600">FiroyyeAB</span>
+          Dev.<span className="text-blue-500">FiroyyeAB</span>
         </a>
 
         {/* Desktop Navigation */}
