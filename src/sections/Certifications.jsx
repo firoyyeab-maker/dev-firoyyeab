@@ -3,7 +3,7 @@ import {
   ShieldCheck,
   Code2,
   Trophy,
-  ExternalLink,
+  Sparkles,
 } from 'lucide-react'
 
 const achievements = [
@@ -34,12 +34,15 @@ function Certifications() {
   return (
     <section
       id="certifications"
-      className="bg-gray-50 px-6 py-28 dark:bg-gray-950"
+      className="relative overflow-hidden bg-gray-50 px-6 py-28 dark:bg-gray-950"
     >
-      <div className="mx-auto max-w-7xl">
+      {/* Background glow */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl">
 
         {/* Heading */}
-        <div className="mb-16 text-center">
+        <div className="animate-slide-up mb-16 text-center">
           <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-blue-600">
             MILESTONES & RECOGNITION
           </p>
@@ -56,15 +59,16 @@ function Certifications() {
 
         {/* Achievements */}
         <div className="grid gap-6 md:grid-cols-3">
-          {achievements.map((item) => {
+          {achievements.map((item, index) => {
             const Icon = item.icon
 
             return (
               <div
                 key={item.title}
-                className="rounded-2xl border border-gray-200 bg-white p-8 transition duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5 dark:border-gray-800 dark:bg-gray-900"
+                style={{ animationDelay: `${index * 150}ms` }}
+                className="animate-slide-up group rounded-2xl border border-gray-200 bg-white p-8 transition duration-300 hover:-translate-y-3 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:border-gray-800 dark:bg-gray-900"
               >
-                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-500/10">
+                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition duration-300 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-500/10">
                   <Icon size={28} />
                 </div>
 
@@ -72,34 +76,48 @@ function Certifications() {
                   {item.category}
                 </p>
 
-                <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+                <h3 className="mb-4 text-xl font-bold text-gray-900 transition group-hover:text-blue-600 dark:text-white">
                   {item.title}
                 </h3>
 
                 <p className="leading-7 text-gray-600 dark:text-gray-400">
                   {item.description}
                 </p>
+
+                <div className="mt-7 h-1 w-10 rounded-full bg-blue-600 transition-all duration-500 group-hover:w-full" />
               </div>
             )
           })}
         </div>
 
         {/* Certifications Notice */}
-        <div className="mt-10 rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-center dark:border-gray-700 dark:bg-gray-900">
-          <Award className="mx-auto mb-4 text-blue-600" size={36} />
+        <div className="animate-slide-up group relative mt-12 overflow-hidden rounded-3xl border border-dashed border-blue-500/30 bg-white p-10 text-center transition duration-300 hover:border-blue-500 dark:bg-gray-900">
 
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-            Professional Certifications
-          </h3>
+          <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-blue-500/10 blur-3xl" />
 
-          <p className="mx-auto mt-3 max-w-xl leading-7 text-gray-600 dark:text-gray-400">
-            This section will showcase verified certifications,
-            completed courses, and professional credentials as I earn them.
-          </p>
+          <div className="relative">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition duration-300 group-hover:rotate-6 group-hover:scale-110 dark:bg-blue-500/10">
+              <Award size={34} />
+            </div>
 
-          <span className="mt-5 inline-block rounded-full bg-blue-100 px-4 py-2 text-xs font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-400">
-            More milestones ahead
-          </span>
+            <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-blue-600">
+              CONTINUOUS GROWTH
+            </p>
+
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Professional Certifications
+            </h3>
+
+            <p className="mx-auto mt-4 max-w-xl leading-7 text-gray-600 dark:text-gray-400">
+              This section will showcase verified certifications,
+              completed courses, and professional credentials as I earn them.
+            </p>
+
+            <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-100 px-5 py-2.5 text-xs font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-400">
+              <Sparkles size={15} />
+              More milestones ahead
+            </span>
+          </div>
         </div>
 
       </div>

@@ -13,16 +13,16 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
 
         {/* Left Content */}
-        <div className="animate-[fadeIn_1s_ease-out]">
+        <div>
 
           {/* Introduction Badge */}
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-2 text-sm font-medium text-blue-600">
+          <div className="animate-slide-up mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-2 text-sm font-medium text-blue-600">
             <Sparkles size={16} />
             Building the Web • Exploring Security
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="animate-slide-up delay-100 text-5xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
             Hi, I'm
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -33,14 +33,14 @@ function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="mt-7 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-400">
+          <p className="animate-slide-up delay-200 mt-7 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-400">
             Software Engineer | Web Developer | Cybersecurity Enthusiast.
             I enjoy transforming ideas into meaningful digital experiences
             while continuously exploring technology and security.
           </p>
 
           {/* Buttons */}
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="animate-slide-up delay-300 mt-10 flex flex-wrap gap-4">
 
             <a
               href="#projects"
@@ -64,7 +64,7 @@ function Hero() {
           </div>
 
           {/* Social Links */}
-          <div className="mt-12 flex items-center gap-5">
+          <div className="animate-slide-up delay-400 mt-12 flex items-center gap-5">
 
             <span className="text-sm text-gray-500">
               Find me on
@@ -75,7 +75,7 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="rounded-full border border-gray-200 p-3 transition hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 dark:border-gray-800"
+              className="rounded-full border border-gray-200 p-3 transition hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 dark:border-gray-800"
             >
               <Code2 size={21} />
             </a>
@@ -85,7 +85,7 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="rounded-full border border-gray-200 p-3 transition hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 dark:border-gray-800"
+              className="rounded-full border border-gray-200 p-3 transition hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 dark:border-gray-800"
             >
               <ExternalLink size={21} />
             </a>
@@ -94,7 +94,7 @@ function Hero() {
         </div>
 
         {/* Right Content */}
-        <div className="relative flex justify-center md:justify-end">
+        <div className="animate-slide-right relative flex justify-center md:justify-end">
 
           {/* Blue Glow */}
           <div className="absolute h-72 w-72 rounded-full bg-blue-500/20 blur-[100px] md:h-96 md:w-96" />
@@ -113,7 +113,7 @@ function Hero() {
           </div>
 
           {/* Floating Badge */}
-          <div className="absolute -bottom-5 left-0 rounded-2xl border border-gray-200 bg-white/90 px-6 py-4 shadow-xl backdrop-blur-xl dark:border-gray-700 dark:bg-gray-900/90 md:left-8">
+          <div className="animate-floating absolute -bottom-5 left-0 rounded-2xl border border-gray-200 bg-white/90 px-6 py-4 shadow-xl backdrop-blur-xl dark:border-gray-700 dark:bg-gray-900/90 md:left-8">
 
             <div className="flex items-center gap-3">
               <div className="h-3 w-3 animate-pulse rounded-full bg-green-500" />

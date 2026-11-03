@@ -2,11 +2,152 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ==============================
+   GLOBAL SETTINGS
+============================== */
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==============================
+   GLOBAL ANIMATIONS
+============================== */
+
+/* Fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide from left */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide from right */
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Floating animation */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ==============================
+   ANIMATION CLASSES
+============================== */
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out both;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out both;
+}
+
+.animate-slide-left {
+    animation: slideLeft 0.8s ease-out both;
+}
+
+.animate-slide-right {
+    animation: slideRight 0.8s ease-out both;
+}
+
+.animate-floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Animation delays */
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+/* ==============================
+   GLOBAL INTERACTIONS
+============================== */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessible motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
